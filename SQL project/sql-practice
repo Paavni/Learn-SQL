@@ -28,7 +28,3 @@ select e.Name, m.Name from Employees  e
 join Employees m where e.Mgr = m.EmpNbr
 
 
-#SQL Zoo
-Self-Join 
-10. select distinct r1.company, r1.num, s3.name, r3.company, r3.num from route r1 join route r2 on r1.company = r2.company and r1.num = r2.num join (route r3 join route r4 on r3.company = r4.company and r3.num = r4.num)
-join stops s1 on r1.stop = s1.id join stops s2 on r2.stop = s2.id join stops s3 on r3.stop = s3.id join stops s4 on r4.stop = s4.id where s1.name = 'Craiglockhart' and s4.name = 'Sighthill' and s2.id= s3.id
