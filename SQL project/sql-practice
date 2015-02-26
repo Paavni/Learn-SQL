@@ -1,0 +1,34 @@
+SELECT DISTINCT c.name
+FROM courses c
+JOIN grades g on g.course_id = c.id
+JOIN students s ON g.student_id = s.id
+WHERE s.name in ("bart", lisa);
+
+select distinct t.name from teachers t
+join courses c on t.id = c.teacher_id 
+join grades g on g.course_id= c.id
+join students s on g.student_id=s.id
+where s.name = "Bart"
+
+select DISTINCT s.name from students s 
+join grades g on g.student_id = s.id 
+join courses c on g.course_id = c.id 
+join teachers t on t.id = c.teacher_id 
+weher t.name = "Krabappel"
+
+select o.OrderNbr, o.Amt, c.Company, c.CreditLimit from Orders o
+join Customers c on c.CustNbr = o.Cust
+
+select o.OrderNbr,o.Amt,s.Name,c.Company from Orders o
+join Customers c on o.Cust = c.CustNbr
+join SalesRep s on s.RepNbr = c.CustRep 
+where o.Amt >= 25000
+
+select e.Name, m.Name from Employees  e 
+join Employees m where e.Mgr = m.EmpNbr
+
+
+#SQL Zoo
+Self-Join 
+10. select distinct r1.company, r1.num, s3.name, r3.company, r3.num from route r1 join route r2 on r1.company = r2.company and r1.num = r2.num join (route r3 join route r4 on r3.company = r4.company and r3.num = r4.num)
+join stops s1 on r1.stop = s1.id join stops s2 on r2.stop = s2.id join stops s3 on r3.stop = s3.id join stops s4 on r4.stop = s4.id where s1.name = 'Craiglockhart' and s4.name = 'Sighthill' and s2.id= s3.id

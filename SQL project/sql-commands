@@ -1,0 +1,11 @@
+.\sqlite3 test.db
+
+get-content C:\sqlite\SQL\ex1.sql | .\sqlite3 ex1.db
+
+get-content C:\sqlite\SQL\ex2.sql | .\sqlite3 ex1.db
+
+.\sqlite3.exe
+
+.open ex1.db
+
+.save ex1.db
