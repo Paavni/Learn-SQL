@@ -7,4 +7,4 @@ join stops s1 on r1.stop = s1.id join stops s2 on r2.stop = s2.id join stops s3 
 
 select distinct t1.num, t1.company, t1.name, t2.num, t2.company from 
 (select distinct d.name, d.id, b.company, b.num from route a join stops c on a.stop = c.id join route b join stops d on b.stop = d.id where a.company = b.company and a.num = b.num and c.name = "Craiglockhart") as t1 join 
-(select distinct d.name, b.company, b.num from route a join stops c on a.stop = c.id join route b join stops d on b.stop = d.id where a.company = b.company and a.num = b.num and c.name = "Sighthill") as t2 on t1.name = t2.name 
+(select distinct d.name, b.company, b.num from route a join stops c on a.stop = c.id join route b join stops d on b.stop = d.id where a.company = b.company and a.num = b.num and c.name = "Sighthill") as t2 on t1.name = t2.name ORDER BY LENGTH(t1.num), t1.num, t1.id, LENGTH(t2.num), t2.num
